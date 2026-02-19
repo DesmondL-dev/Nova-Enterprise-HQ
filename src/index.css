@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  /* Nova Enterprise Design System */
+  --color-nova-bg: #0B0F19;
+  --color-nova-surface: #111827;
+  --color-nova-border: #1F2937;
+  
+  --color-nova-text: #F9FAFB;
+  --color-nova-muted: #9CA3AF;
+  
+  --color-nova-blue: #007CED;
+  --color-nova-blue-hover: #005BB5;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-nova-bg);
+    color: var(--color-nova-text);
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
