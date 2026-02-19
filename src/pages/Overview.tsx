@@ -36,47 +36,47 @@ const Overview: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* KPI 1: Revenue */}
         <div className="bg-nova-surface border border-nova-border rounded-xl p-6 flex flex-col justify-between hover:border-nova-blue/50 transition-colors">
-          <div className="flex justify-between items-start">
-            <div>
-              <p className="text-nova-muted text-sm font-medium mb-1">Total Revenue (30d)</p>
-              <h3 className="text-3xl font-bold text-nova-text">${data.totalRevenue.toLocaleString()}</h3>
+          <div className="flex justify-between items-start gap-4">
+            <div className="min-w-0">
+              <p className="text-nova-muted text-sm font-medium mb-1 truncate">Total Revenue (30d)</p>
+              <h3 className="text-3xl font-bold text-nova-text truncate">${data.totalRevenue.toLocaleString()}</h3>
             </div>
-            <div className="p-3 bg-nova-blue/10 rounded-lg">
+            <div className="p-3 bg-nova-blue/10 rounded-lg flex-shrink-0">
               <DollarSign className="w-5 h-5 text-nova-blue" />
             </div>
           </div>
           <div className="flex items-center mt-4 text-sm text-emerald-400">
-            <TrendingUp className="w-4 h-4 mr-1" />
-            <span>+{data.revenueGrowth}% from last month</span>
+            <TrendingUp className="w-4 h-4 mr-1 flex-shrink-0" />
+            <span className="truncate">+{data.revenueGrowth}% from last month</span>
           </div>
         </div>
 
         {/* KPI 2: Orders */}
         <div className="bg-nova-surface border border-nova-border rounded-xl p-6 flex flex-col justify-between hover:border-nova-blue/50 transition-colors">
-          <div className="flex justify-between items-start">
-            <div>
-              <p className="text-nova-muted text-sm font-medium mb-1">Total Orders</p>
-              <h3 className="text-3xl font-bold text-nova-text">{data.totalOrders.toLocaleString()}</h3>
+          <div className="flex justify-between items-start gap-4">
+            <div className="min-w-0">
+              <p className="text-nova-muted text-sm font-medium mb-1 truncate">Total Orders</p>
+              <h3 className="text-3xl font-bold text-nova-text truncate">{data.totalOrders.toLocaleString()}</h3>
             </div>
-            <div className="p-3 bg-purple-500/10 rounded-lg">
+            <div className="p-3 bg-purple-500/10 rounded-lg flex-shrink-0">
               <ShoppingBag className="w-5 h-5 text-purple-400" />
             </div>
           </div>
-          <p className="mt-4 text-sm text-nova-muted">Consistent volume across all nodes.</p>
+          <p className="mt-4 text-sm text-nova-muted truncate">Consistent volume across all nodes.</p>
         </div>
 
         {/* KPI 3: Active Stores */}
         <div className="bg-nova-surface border border-nova-border rounded-xl p-6 flex flex-col justify-between hover:border-nova-blue/50 transition-colors">
-          <div className="flex justify-between items-start">
-            <div>
-              <p className="text-nova-muted text-sm font-medium mb-1">Active Hubs</p>
-              <h3 className="text-3xl font-bold text-nova-text">{data.activeStores}</h3>
+          <div className="flex justify-between items-start gap-4">
+            <div className="min-w-0">
+              <p className="text-nova-muted text-sm font-medium mb-1 truncate">Active Hubs</p>
+              <h3 className="text-3xl font-bold text-nova-text truncate">{data.activeStores}</h3>
             </div>
-            <div className="p-3 bg-emerald-500/10 rounded-lg">
+            <div className="p-3 bg-emerald-500/10 rounded-lg flex-shrink-0">
               <Store className="w-5 h-5 text-emerald-400" />
             </div>
           </div>
-          <p className="mt-4 text-sm text-nova-muted">London, Toronto, Waterloo.</p>
+          <p className="mt-4 text-sm text-nova-muted truncate">London, Toronto, Waterloo.</p>
         </div>
       </div>
 
@@ -87,7 +87,7 @@ const Overview: React.FC = () => {
           <h3 className="text-lg font-semibold text-nova-text mb-6">Revenue Telemetry</h3>
           <div className="h-[300px] w-full">
             <ResponsiveContainer width="100%" height="100%">
-              <AreaChart data={data.salesTrend} margin={{ top: 0, right: 0, left: -20, bottom: 0 }}>
+              <AreaChart data={data.salesTrend} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
                 <defs>
                   <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="5%" stopColor="#007CED" stopOpacity={0.3}/>
@@ -108,6 +108,7 @@ const Overview: React.FC = () => {
                   fontSize={12} 
                   tickLine={false} 
                   axisLine={false}
+                  width={55}
                   tickFormatter={(value) => `$${value}`}
                 />
                 <Tooltip 
