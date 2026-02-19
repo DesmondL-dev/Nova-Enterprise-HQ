@@ -1,5 +1,7 @@
 # 🚀 Nova Enterprise HQ (B2B SaaS Dashboard)
 
+![Portfolio Banner](./src/assets/portfolio-banner.jpg)
+
 > An enterprise-grade, high-performance B2B SaaS Dashboard built to handle complex supply chain data flows, role-based permissions, and strict form validations.
 
 ## 🎯 Architecture & Tech Stack
