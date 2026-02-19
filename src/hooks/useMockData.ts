@@ -93,7 +93,7 @@ export const useMockOrders = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      const statuses: OrderStatus[] = ['Completed', 'Processing', 'Pending', 'Cancelled'];
+      // Removed the unused 'statuses' array completely to satisfy TypeScript strict mode
       const locations: StoreLocation[] = ['London HQ', 'Toronto Hub', 'Waterloo Node'];
 
       const generatedOrders: Order[] = Array.from({ length: 500 }).map(() => ({
